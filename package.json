@@ -1,6 +1,6 @@
 {
   "name": "react-native-date-selector",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A lightweight and customizable React Native date selector component that allows users to input day, month, and year with dropdown suggestions, supports multiple date formats, optional age calculation, and localization.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
