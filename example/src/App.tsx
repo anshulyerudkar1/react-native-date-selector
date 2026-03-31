@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SafeAreaView, Text, StyleSheet } from 'react-native';
-import DateSelector from '../../src/DateSelector';
+import {DateSelector} from 'react-native-date-selector';
 
 export default function App() {
   const [selectedDate, setSelectedDate] = useState<string>('');
@@ -14,7 +14,19 @@ export default function App() {
         label="Date of Birth"
         lang="English"
         showAge
-        baseDate="1990-05-20"
+        baseDate=""
+        returnFormat="DD/MM/YYYY"
+        onDateChange={(formatted, age) => {
+          setSelectedDate(typeof formatted === 'string' ? formatted : formatted.toString());
+          setAge(age);
+        }}
+      />
+
+      <DateSelector
+        label="Test Date"
+        lang="English"
+        showAge={false}
+        baseDate=""
         returnFormat="DD/MM/YYYY"
         onDateChange={(formatted, age) => {
           setSelectedDate(typeof formatted === 'string' ? formatted : formatted.toString());
