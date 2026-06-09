@@ -3,8 +3,14 @@ import DateSelector, {
   formatDate,
   parseDateString,
 } from './DateSelector';
-import type { Props as DateSelectorProps } from './DateSelector';
 
 export { DateSelector, calculateAge, formatDate, parseDateString };
-export type { DateSelectorProps };
+export type {
+  DateSelectorProps,
+  DateSelectorTheme,
+  LocaleTranslations,
+  DateFormat,
+  SupportedLanguage,
+} from './types';
+
 export default DateSelector;

@@ -17,7 +17,7 @@ export default function App() {
         baseDate=""
         returnFormat="DD/MM/YYYY"
         onDateChange={(formatted, age) => {
-          setSelectedDate(typeof formatted === 'string' ? formatted : formatted.toString());
+          setSelectedDate(formatted);
           setAge(age);
         }}
       />
@@ -29,7 +29,7 @@ export default function App() {
         baseDate=""
         returnFormat="DD/MM/YYYY"
         onDateChange={(formatted, age) => {
-          setSelectedDate(typeof formatted === 'string' ? formatted : formatted.toString());
+          setSelectedDate(formatted);
           setAge(age);
         }}
       />

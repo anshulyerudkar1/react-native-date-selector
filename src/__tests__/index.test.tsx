@@ -12,9 +12,11 @@ jest.mock('react-native', () => {
     return Component;
   };
 
-  // We intentionally avoid spreading the real module here because
-  // some helpers inside `react-native` rely on React internals that
-  // don't run cleanly in this test environment.
+  class MockValue {
+    interpolate() { return this; }
+    setValue() {}
+  }
+
   return {
     View: createStub('View'),
     Text: createStub('Text'),
@@ -25,6 +27,13 @@ jest.mock('react-native', () => {
     StyleSheet: {
       create: <T extends object>(obj: T): T => obj,
       flatten: (style: any) => style,
+    },
+    Animated: {
+      Value: jest.fn(() => new MockValue()),
+      timing: jest.fn(() => ({
+        start: (cb?: any) => cb && cb({ finished: true }),
+      })),
+      View: createStub('Animated.View'),
     },
   };
 });
